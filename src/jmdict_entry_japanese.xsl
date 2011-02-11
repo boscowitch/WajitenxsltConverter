@@ -8,8 +8,6 @@
 
 <xsl:template match="entry">
             <xsl:apply-templates/>
-            <xsl:text>
-</xsl:text>
 </xsl:template>
 
     <xsl:template match="k_ele">

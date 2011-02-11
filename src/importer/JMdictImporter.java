@@ -19,10 +19,9 @@ public class JMdictImporter extends XmlImporter  {
 			return null;
 		tags = header +"\n" + tags;
 		Entry entry = new Entry();
-		entry.japanese = transform("src/jmdict_entry_japanese.xsl", tags);
-		System.out.println(entry.japanese);
-		//entry.reading = transform("src/jmdict_entry_reading.xsl", tags);
-		//entry.translation = transform("src/jmdict_entry_translation.xsl", tags);
+		entry.japanese = transform("src/jmdict_entry_japanese.xsl", tags).trim();
+		entry.reading = transform("src/jmdict_entry_reading.xsl", tags).trim();
+		entry.translation = transform("src/jmdict_entry_translation.xsl", tags).trim().replaceAll("; .",".");
 		return entry;
 	}
 	

@@ -23,10 +23,12 @@ public class TabfileExporter extends Exporter {
 	}
 	
 	public void export(Entry entry) throws IOException {
-		println(entry.japanese + "\t" + entry.reading + "\\n"
-				+ entry.translation);
-		println(entry.reading+ "\t" + entry.japanese  + "\\n"
-				+ entry.translation);
+		if(!entry.japanese.isEmpty())
+			println(entry.japanese + "\t" + entry.reading + "\t"
+					+ entry.translation);
+		else
+			println(entry.reading  + "\t" + entry.reading + "\t"
+					+ entry.translation);
 	}
 
 }

@@ -13,9 +13,9 @@ public class WadokuImporter extends XmlImporter  {
 			return null;
 		
 		Entry entry = new Entry();
-		entry.japanese = transform("src/wadoku_entry_japanese.xsl", tags);
-		entry.reading = transform("src/wadoku_entry_reading.xsl", tags);
-		entry.translation = transform("src/wadoku_entry_german.xsl", tags);
+		entry.japanese = transform("src/wadoku_entry_japanese.xsl", tags).trim();
+		entry.reading = transform("src/wadoku_entry_reading.xsl", tags).trim();
+		entry.translation = transform("src/wadoku_entry_german.xsl", tags).trim();
 		return entry;
 	}
 	
