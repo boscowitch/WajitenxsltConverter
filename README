@@ -1,0 +1,3 @@
+a simple converter for wadoku and JMdict xml files using xslt to extract 
+japanese, reading and translations strings for frther processing/exporting
+to tabfiles, sqlfiles ect...
