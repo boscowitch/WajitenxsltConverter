@@ -14,14 +14,6 @@ public class TabfileExporter extends Exporter {
 		super(outfile);
 	}
 	
-	public void export(Importer in) throws IOException {
-		Entry entry = in.getNext();
-		while(entry != null) {
-			export(entry);
-			entry = in.getNext();
-		}
-	}
-	
 	public void export(Entry entry) throws IOException {
 		if(!entry.japanese.isEmpty())
 			println(entry.japanese + "\t" + entry.reading + "\t"

@@ -1,10 +1,13 @@
 package exporter;
 
+import importer.Entry;
+import importer.Importer;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Exporter {
+public abstract class Exporter {
 
 	private FileWriter writer;
 	
@@ -32,5 +35,15 @@ public class Exporter {
 	public void println(String out) throws IOException {
 		print(out + "\n");
 	}
+	
+	public void export(Importer in) throws IOException {
+		Entry entry = in.getNext();
+		while(entry != null) {
+			export(entry);
+			entry = in.getNext();
+		}
+	}
+	
+	public abstract void export(Entry entry) throws IOException;
 
 }
